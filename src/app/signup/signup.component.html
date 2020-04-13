@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="toolbar2" role="banner">
+            <span>Sign Up to the portal! </span>    
+      </div>
+    </div>
+              
+      <div class="container">
+      <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+          <!-- <div class="col-xs-12 col-md-5"> -->
+              <form #signUpForm="ngForm" (ngSubmit)="onSignUp(signUpForm)" ngNativeValidate>
+                  <div class="form-group">
+                      <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                            </div>
+                  </div>
+                  <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                  <div class="form-group">
+                      <label for="email">E-mail</label>
+                      <input 
+                      type="email" 
+                      id="email" 
+                      name="email"
+                      ngModel
+                      class="form-control"
+                      required
+                      email/>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input 
+                      type="password" 
+                      id="password" 
+                      name="password"
+                      ngModel
+                      class="form-control"
+                      required/>
+                  </div>
+                  <div class="form-group">
+                        <label for="passwordRepeat">Confirm Password</label>
+                        <input 
+                        type="password" 
+                        id="passwordRepeat" 
+                        name="passwordRepeat"
+                        ngModel
+                        class="form-control"
+                        required/>
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="btn-toolbar">
+                      <button class="btn btn-primary" type="submit" >Sign Up</button>
+                      <br/>
+                    <button [routerLink]="['/']" class="btn btn-primary" type="button" >Back</button>
+                </div>
+              </form>
+          </div>
+          </div>
+      </div>
+      </div>
